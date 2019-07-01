@@ -1,10 +1,10 @@
-# Path-to-RegExp
+# Path-to-RegExp (ES)
 
 > Turn a path string such as `/user/:name` into a regular expression.
 
+> This is an ES module version of path-to-regexp. Otherwise unchanged. Changes in original library will be backported in short period of time
+
 [![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
 [![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
@@ -12,13 +12,19 @@
 ## Installation
 
 ```
-npm install path-to-regexp --save
+npm install path-to-regexp-es --save
 ```
 
 ## Usage
 
+> Requires node v12 (with --experimental-modules flag), a browser that supports ES module (Chrome, Firefox, Edge, Safari) or bundlers like webpack or rollup
+
 ```javascript
-const pathToRegexp = require('path-to-regexp')
+import pathToRegexp from 'path-to-regexp-es'
+
+// or
+
+import { compile, parse, tokensToFunction, tokensToRegExp } from 'path-to-regexp-es'
 
 // pathToRegexp(path, keys?, options?)
 // pathToRegexp.parse(path)
@@ -43,7 +49,7 @@ const regexp = pathToRegexp('/foo/:bar', keys)
 // keys = [{ name: 'bar', prefix: '/', delimiter: '/', optional: false, repeat: false, pattern: '[^\\/]+?' }]
 ```
 
-**Please note:** The `RegExp` returned by `path-to-regexp` is intended for ordered data (e.g. pathnames, hostnames). It can not handle arbitrarily ordered data (e.g. query strings, URL fragments, JSON, etc).
+**Please note:** The `RegExp` returned by `path-to-regexp-es` is intended for ordered data (e.g. pathnames, hostnames). It can not handle arbitrarily ordered data (e.g. query strings, URL fragments, JSON, etc).
 
 ### Parameters
 
@@ -236,14 +242,10 @@ You can see a live demo of this library in use at [express-route-tester](http://
 MIT
 
 [npm-image]: https://img.shields.io/npm/v/path-to-regexp.svg?style=flat
-[npm-url]: https://npmjs.org/package/path-to-regexp
-[travis-image]: https://img.shields.io/travis/pillarjs/path-to-regexp.svg?style=flat
-[travis-url]: https://travis-ci.org/pillarjs/path-to-regexp
-[coveralls-image]: https://img.shields.io/coveralls/pillarjs/path-to-regexp.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/pillarjs/path-to-regexp?branch=master
-[david-image]: http://img.shields.io/david/pillarjs/path-to-regexp.svg?style=flat
-[david-url]: https://david-dm.org/pillarjs/path-to-regexp
-[license-image]: http://img.shields.io/npm/l/path-to-regexp.svg?style=flat
+[npm-url]: https://npmjs.org/package/path-to-regexp-es
+[david-image]: http://img.shields.io/david/pillarjs/path-to-regexp-es.svg?style=flat
+[david-url]: https://david-dm.org/pillarjs/path-to-regexp-es
+[license-image]: http://img.shields.io/npm/l/path-to-regexp-es.svg?style=flat
 [license-url]: LICENSE.md
-[downloads-image]: http://img.shields.io/npm/dm/path-to-regexp.svg?style=flat
-[downloads-url]: https://npmjs.org/package/path-to-regexp
+[downloads-image]: http://img.shields.io/npm/dm/path-to-regexp-es.svg?style=flat
+[downloads-url]: https://npmjs.org/package/path-to-regexp-es
