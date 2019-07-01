@@ -4,6 +4,7 @@
   "version": "3.0.0",
   "main": "index.js",
   "typings": "index.d.ts",
+  "type": "module",
   "files": [
     "index.js",
     "index.d.ts",
