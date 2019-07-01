@@ -1,5 +1,5 @@
 {
-  "name": "path-to-regexp",
+  "name": "path-to-regexp-es",
   "description": "Express style path to RegExp utility",
   "version": "3.0.0",
   "main": "index.js",
